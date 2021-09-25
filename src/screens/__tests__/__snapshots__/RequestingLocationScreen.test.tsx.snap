@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Requesting Location Service Should match the snapshot exactly 1`] = `
+<View
+  testID="RequestingLocationScreen"
+>
+  <Text>
+    Follow the prompt to get permission to find your location.
+  </Text>
+  <Text>
+    waiting for geo location...
+  </Text>
+</View>
+`;
