@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RequestingLocationScreen from "./src/screens/RequestingLocationScreen";
 import Home from "./src/screens/Home";
+import { SafeAreaView } from "react-native";
 const Stack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
 
@@ -23,8 +24,10 @@ export const AppStack = () => (
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <AppStack />
-    </NavigationContainer>
+    <SafeAreaView>
+      <NavigationContainer>
+        <AppStack />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
