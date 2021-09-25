@@ -3,16 +3,21 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import RequestingLocationScreen from "./src/screens/RequestingLocationScreen";
 import Home from "./src/screens/Home";
-
 const Stack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
 
 export const AppStack = () => (
-  <Stack.Navigator initialRouteName="Location Service">
-    <Stack.Screen
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}
+    initialRouteName="Location Service"
+  >
+    <HomeStack.Screen
       name="Location Service"
       component={RequestingLocationScreen}
     />
-    <Stack.Screen name="Home" component={Home} />
+    <HomeStack.Screen name="Home" component={Home} />
   </Stack.Navigator>
 );
 

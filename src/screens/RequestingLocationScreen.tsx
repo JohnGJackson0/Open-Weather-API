@@ -11,7 +11,6 @@ export default function RequestingLocationScreen({ navigation }: any) {
 
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
-      console.log(status);
       if (status !== "granted") {
         setMessage("Permission to geo locate was denied");
         return;
@@ -21,7 +20,6 @@ export default function RequestingLocationScreen({ navigation }: any) {
   }, []);
 
   useEffect(() => {
-    console.log("The Location ", location);
     if (Object.keys(location).length !== 0) {
       navigation.reset({
         index: 0,
