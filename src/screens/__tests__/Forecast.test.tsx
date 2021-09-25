@@ -10,8 +10,15 @@ describe("Forecast Component", () => {
       getParam: jest.fn(),
       goBack: jest.fn(),
     };
+    const fakeRoute = {
+      params: {
+        forcast: {},
+      },
+    };
 
-    const { getByText } = render(<Forecast navigation={fakeNavigator} />);
+    const { getByText } = render(
+      <Forecast navigation={fakeNavigator} route={fakeRoute} />
+    );
     fireEvent.press(getByText("return"));
 
     await waitFor(() => {
